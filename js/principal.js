@@ -38,7 +38,7 @@ for (var i=0; i < pacientes.length; i++) {
     //validar peso e altura
     if (alturaEhValida && pesoEhValido) {
         var imc = peso / (altura*altura);
-        tdImc.textContent = imc;
+        tdImc.textContent = imc.toFixed(2);
     }
 
 }
