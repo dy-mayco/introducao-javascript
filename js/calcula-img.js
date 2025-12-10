@@ -13,7 +13,7 @@ var pacientes = document.querySelectorAll(".paciente");
 
 for (var i=0; i < pacientes.length; i++) {
 
-    var paciente = pacientes[i];    //inserir
+    var paciente = pacientes[i];      // inserir
 
     var tdPeso = paciente.querySelector(".info-peso");
     var peso = tdPeso.textContent;
@@ -23,19 +23,19 @@ for (var i=0; i < pacientes.length; i++) {
 
     var pesoEhValido = validaPeso(peso);
     var alturaEhValida = validaAltura(altura);
-
+    
     if (!pesoEhValido) {
         console.log("Peso inválido");
         pesoEhValido = false;
         tdImc.textContent = "Peso inválido";
     }
-
+    
     if (!alturaEhValida){
         console.log("Altura inválida");
         alturaEhValida = false;
         tdImc.textContent = "Altura inválida";
     }
-
+    
     if (alturaEhValida && pesoEhValido) {
         var imc = calculaImc(peso,altura);
         tdImc.textContent = imc;
@@ -43,7 +43,7 @@ for (var i=0; i < pacientes.length; i++) {
 
 }
 
-// Rescrever o mesmo código em três funções independentes
+// Reescrever o mesmo código em tres funções independentes
 
 function calculaImc(peso, altura){
     var imc = 0;
@@ -54,7 +54,7 @@ function calculaImc(peso, altura){
 function validaPeso(peso){
     if (peso <= 0 ||  peso >= 1000) {
         return false;
-    }else{
+    } else {
         return true;
     }
 }
